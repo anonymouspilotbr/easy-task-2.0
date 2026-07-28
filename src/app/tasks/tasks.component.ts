@@ -1,13 +1,9 @@
-import {
-  Component,
-  inject,
-  input,
-} from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ResolveFn, RouterLink } from '@angular/router';
 
 import { TaskComponent } from './task/task.component';
-import { TasksService } from './tasks.service';
 import { Task } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -22,10 +18,7 @@ export class TasksComponent {
   order = input<'asc' | 'desc' | undefined>();
 }
 
-export const resolveUserTasks: ResolveFn<Task[]> = (
-  activatedRouteSnapshot,
-  routerState
-) => {
+export const resolveUserTasks: ResolveFn<Task[]> = (activatedRouteSnapshot, routerState) => {
   const order = activatedRouteSnapshot.queryParams['order'];
   const tasksService = inject(TasksService);
   const tasks = tasksService
