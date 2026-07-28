@@ -1,5 +1,4 @@
 import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
-
 import { TaskComponent } from './task/task.component';
 import { TasksService } from './tasks.service';
 import { ActivatedRoute, RouterLink } from "@angular/router";
